@@ -82,6 +82,7 @@ const initialCountListener = function () {
 function addRecordHandler() {
   const name = document.getElementById("name").value;
   const salary = document.getElementById("salary").value;
+ 
 
   if (!name || !salary) {
     showDataError(name, salary);
@@ -89,6 +90,9 @@ function addRecordHandler() {
   }
 
   addRecord(name, salary);
+  // emptying the input field 
+   document.getElementById("name").value = ''
+  document.getElementById("salary").value = ''
 }
 
 function addRecord(name, salary) {
@@ -97,6 +101,7 @@ function addRecord(name, salary) {
 
   salary_data[id] = newItem;
   initializeChart(salary_data);
+
 }
 
 function getRecord(name, salary) {
